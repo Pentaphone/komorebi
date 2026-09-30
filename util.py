@@ -30,3 +30,25 @@ def parse_move(text, size):
     return "invalid"
 
   return y * size + x
+
+
+def print_board(board):
+  letters = [chr(ord("A") + i + (i >= 8)) for i in range(SIZE)]
+
+  print()
+  print("   " + " ".join(letters))
+
+  for y in range(SIZE):
+    row = []
+    for x in range(SIZE):
+      position = y * SIZE + x
+
+      if   board[position] == BLACK: stone = "O"
+      elif board[position] == WHITE: stone = "X"
+      else: stone = "·"
+      row.append(stone)
+
+    print(f"{SIZE-y:2} " + " ".join(row) + f" {SIZE-y:2}")
+
+  print("   " + " ".join(letters))
+  print()

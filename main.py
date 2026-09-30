@@ -1,7 +1,7 @@
 # Komorebi
 
 from config import *
-from util import parse_move
+from util import parse_move, print_board
 from game_tree import choose_move
 from gameplay import play, calculate_result
 
@@ -17,6 +17,7 @@ def play_game():
   passes = 0
 
   while True:
+    print_board(board)
     if player == BLACK:
       move = parse_move(input("Your move: "), SIZE)
       if move == "invalid":
