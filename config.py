@@ -1,0 +1,10 @@
+# Config
+
+EMPTY = 0
+BLACK = 1
+WHITE = -1
+
+SIZE = 9
+N = SIZE * SIZE
+
+ALLOW_SELF_CAPTURE = False

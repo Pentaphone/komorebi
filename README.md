@@ -1,2 +1,2 @@
 # komorebi
-probabilistic go / baduk / weiqi bot
+stochastic go / baduk / weiqi bot
