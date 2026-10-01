@@ -2,13 +2,10 @@
 
 from config import *
 from util import parse_move, print_board
-from game_tree import choose_move
+from game_tree import choose_move, format_move
 from gameplay import play, calculate_result
 
 import numpy as np
-
-def test():
-  print("Hi")
 
 def play_game():
   board = np.zeros(N, dtype=np.int8)
@@ -32,9 +29,9 @@ def play_game():
         board,
         player,
         position_history,
-        iterations=10_000
+        iterations = ITERATIONS
       )
-      print("KomorebiBot:", move)
+      print("KomorebiBot:", format_move(move))
 
     # pass
     if move is None:
@@ -54,3 +51,5 @@ def play_game():
   if   result == BLACK: print("Black wins")
   elif result == WHITE: print("White wins")
   else: print("Draw")
+
+play_game()

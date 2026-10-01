@@ -23,11 +23,15 @@ def parse_move(text, size):
   text = text.strip().lower()
 
   if text == "pass": return None
-  x = ord(text[0]) - ord("a")
-  y = int(text[1:]) - 1
 
-  if not (0 <= x < size and 0 <= y < size):
-    return "invalid"
+  if len(text) < 2: return "invalid"
+
+  x = ord(text[0]) - ord("a")
+  try: y = int(text[1:])
+  except ValueError: return "invalid"
+
+  if not (0 <= x < size and 1 <= y <= size): return "invalid"
+  y = size - y
 
   return y * size + x
 

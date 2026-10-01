@@ -80,9 +80,6 @@ def get_legal_moves(board, player, position_history):
     if play(test_board, position, player, position_history, record=False):
       moves.append(position)
 
-  # Pass
-  moves.append(None)
-
   return moves
 
 
